@@ -1,0 +1,87 @@
+.searchContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.labelInput {
+  background-color: var(--space-gray);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.selectList {
+  max-height: 100px;
+  width: 258px;
+  overflow: auto;
+  position: absolute;
+  top: 79px;
+  left: 0;
+  background-color: var(--dark);
+  padding: 5px 10px;
+  z-index: 9800;
+}
+
+.selectList::-webkit-scrollbar{
+  width: 5px;
+}
+
+.selectList::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background-color: var(--midnight-green);
+}
+
+.selectList::-webkit-scrollbar-track{
+  background-color: var(--space-gray);
+}
+
+.searchContainer .inputSearchContainer {
+  position: absolute;
+  padding: 0 10px;
+  top: 43px;
+  width: 258px;
+  background-color: var(--dark);
+}
+
+.searchContainer .selectListInput {
+  outline: none;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+}
+
+.selectList ul {
+  /* height: 300px; */
+  list-style: none;
+}
+
+.selectList ul li {
+  margin: 5px 0;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Effects */
+
+.selectList ul li:hover {
+  background: var(--dark2)
+}
+
+.labelInput:hover {
+  background: var(--midnight-green-hover)
+}
+
+/* Queries */
+
+@media screen and (min-width: 900px) {
+  .selectList {
+    width: 510px;
+  }
+  .searchContainer .inputSearchContainer {
+    position: absolute;
+    padding: 0 10px;
+    top: 43px;
+    width: 510px;
+    background-color: var(--dark);
+  }
+}

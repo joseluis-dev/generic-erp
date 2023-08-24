@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `keys` ADD COLUMN `orgID` VARCHAR(191) NULL;

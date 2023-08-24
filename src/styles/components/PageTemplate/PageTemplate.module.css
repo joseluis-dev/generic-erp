@@ -1,0 +1,44 @@
+.pageContainer {
+  position: relative;
+  margin: 20px auto;
+  display: flex;
+}
+
+.pageContainer main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  padding: 0;
+  padding-left: 20px;
+}
+
+.pageContainer aside {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* Efectos */
+
+/* Animaciones */
+
+/* Media Queries */
+
+@media screen and (min-width: 900px) {
+  .pageContainer {
+    max-width: 80%;
+    flex-direction: row;
+  }
+
+  .pageContainer aside {
+    align-content: flex-end;
+    margin: 0 20px 0 0;
+  }
+
+  .pageContainer main {
+    margin: 0 20px;
+    padding: 0;
+  }
+}

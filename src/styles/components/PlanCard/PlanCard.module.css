@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  padding: 20px;
+  background: var(--space-gray);
+  border-radius: var(--border-radius);
+}
+
+.container h3 {
+  color: var(--pacific-cyan);
+}
+
+.container hr {
+  margin: 5px 0;
+  border: none;
+  border-top: 1px solid var(--moonstone);
+  margin-bottom: 20px;
+}
+
+.price {
+  display: flex;
+  align-items: flex-end;
+}
+
+.price h2 {
+  margin: 0 5px;
+}
+
+.price small {
+  display: flex;
+  align-self: flex-start;
+}
+
+.detail {
+  display: flex;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.description {
+  width: 90px;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+
+.values label {
+  justify-self: end;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--pacific-cyan);
+}

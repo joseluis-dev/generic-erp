@@ -1,0 +1,23 @@
+.main {
+  position: relative;
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  gap: 10px;
+  margin: 5px 20px;
+  padding: 5px;
+}
+
+.main hr {
+  margin: 5px 0;
+  border: none;
+  border-top: 1px solid var(--moonstone);
+  margin-bottom: 20px;
+}
+
+/* Efectos */
+
+/* Animaciones */
+
+/* Media Queries */

@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.container h3 {
+  color: var(--pacific-cyan);
+  font-size: calc(16px + 0.24vw);
+}
+
+.price {
+  display: flex;
+  align-items: flex-end;
+}
+
+.price h2 {
+  margin: 0 5px;
+}
+
+.price small {
+  display: flex;
+  align-self: flex-start;
+}
+
+.container ul {
+  list-style: none;
+  margin: 0 20px 20px;
+}
+
+.container li::before {
+  content: '\2713\0020'
+}
+
+/* Media Query */
+
+@media screen and (min-width: 900px) {
+  .container {
+    margin: 0;
+  }
+}

@@ -1,0 +1,92 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardDetail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cardDetail hr {
+  margin: 5px 0;
+  border: none;
+  border-top: 1px solid var(--moonstone);
+}
+
+.cardDetail ul {
+  padding: 5px;
+  list-style: none;
+}
+
+.cardDetail ul li {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  color: var(--cadet-gray);
+}
+
+.doughnutContainer {
+  display: flex;
+  position: relative;
+  width: 30vw;
+  height: 30vw;
+  max-width: 300px;
+  max-height: 300px;
+  min-width: 220px;
+  min-height: 220px;
+}
+
+.areaLineContainer {
+  display: flex;
+  position: relative;
+  width: 70vw;
+  height: 40vw;
+  max-width: 700px;
+  max-height: 500px;
+  min-width: 220px;
+  min-height: 150px;
+}
+
+.cardDetail ul li i,
+.cardDetail ul li span {
+  margin-right: 10px;
+}
+
+.cardDetail ul li span:nth-child(2) {
+  width: 74px;
+}
+
+.colorDetailDoughnut ul li:nth-child(1) i {
+  color: var(--success-green);
+}
+
+.colorDetailDoughnut ul li:nth-child(2) i {
+  color: var(--danger-red);
+}
+
+.colorDetailArea ul li i {
+  color: var(--success-green);
+}
+
+.colorDetailArea ul li span:nth-child(2) {
+  color: var(--pacific-cyan);
+}
+
+/* Media Query */
+@media screen and (min-width: 900px) {
+  .cardDetail {
+    margin-bottom: 20px;
+  }
+  .doughnutContainer {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .areaLineContainer {
+    width: 50vw;
+    height: 20vw;
+  }
+}

@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.selectGroup {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+.selectGroup input {
+  padding: 10px;
+}
+
+.container select {
+  display: none;
+}
+
+/* Media Queries */
+@media screen and (min-width: 900px) {
+  .detailContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 160px) repeat(2, minmax(50px, 80px));
+    gap: 10px;
+  }
+
+  .detailContainer .selectGroup:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+}

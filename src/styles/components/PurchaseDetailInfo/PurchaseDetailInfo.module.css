@@ -1,0 +1,92 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  align-items: center;
+  overflow: auto;
+  width: 100%;
+  max-width: 88%;
+}
+
+.container hr {
+  margin: 5px 0;
+  border: none;
+  border-top: 1px solid var(--moonstone);
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.container::-webkit-scrollbar{
+  height: 5px;
+}
+
+.container::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background-color: var(--midnight-green);
+}
+
+.container::-webkit-scrollbar-track{
+  background-color: var(--space-gray);
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.infoCard h2 {
+  text-align: center;
+  color: var(--pacific-cyan);
+  padding: 5px 0;
+  margin: 5px 0;
+}
+
+.infoCard label {
+  display: flex;
+  padding: 5px 0 0 0;
+  margin: 5px 0 0 0;
+}
+
+.infoCard label div {
+  color: var(--pacific-cyan);
+  padding-right: 5px;
+}
+
+.buttonsContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--space-gray);
+  backdrop-filter: blur(5px);
+  z-index: 10000;
+}
+
+.modal section {
+  display: flex;
+  justify-content: center;
+  max-height: 650px;
+  overflow: auto;
+}
+
+.modal button:first-child {
+  display: none;
+}
+
+@media screen and (min-width: 900px) {
+  .modal section {
+    max-width: fit-content;
+  }
+}

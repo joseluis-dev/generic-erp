@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.checkContainer {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.container label {
+  padding: 0 10px;
+}

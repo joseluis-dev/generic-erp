@@ -1,0 +1,115 @@
+.mainContainer {
+  position: fixed;
+  top: 70px;
+  right: -1000px;
+}
+
+.errorContainer {
+  display: flex;
+  position: fixed;
+  top: 70px;
+  right: -1000px;
+  border: 1px solid var(--danger-red);
+  border-radius: var(--border-radius);
+  background: var(--midnight-dark);
+  z-index: 9700;
+}
+
+.infoContainer {
+  display: flex;
+  position: fixed;
+  top: 70px;
+  right: -1000px;
+  border: 1px solid var(--pacific-cyan);
+  border-radius: var(--border-radius);
+  background: var(--midnight-dark);
+  z-index: 9700;
+}
+
+.errorContainer .errorCloseIcon {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-right: 1px solid var(--danger-red);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  cursor: pointer;
+}
+
+.infoContainer .infoCloseIcon {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-right: 1px solid var(--pacific-cyan);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  cursor: pointer;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.errorContainer .message i {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  color: var(--danger-red);
+  padding: 0;
+  border: none;
+}
+
+.infoContainer .message i {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  color: var(--pacific-cyan);
+  padding: 0;
+  border: none;
+}
+
+.showMessage {
+  right: 10px;
+  animation: showerror 0.8s ease;
+}
+
+.hideMessage {
+  right: -1000px;
+  animation: hideerror 0.8s linear;
+}
+
+.modal button {
+  display: none;
+}
+
+/* Effects */
+
+.errorContainer .errorCloseIcon:hover {
+  background: var(--danger-red-hover);
+  color: black;
+}
+
+.infoContainer .infoCloseIcon:hover {
+  background: var(--pacific-cyan);
+  color: black;
+}
+
+/* Animation */
+
+@keyframes showerror {
+  from {
+    right: -1000px;
+  }
+  to {
+    right: 10px;
+  }
+}
+
+@keyframes hideerror {
+  from {
+    right: 10px;
+  }
+  to {
+    right: -1000px;
+  }
+}

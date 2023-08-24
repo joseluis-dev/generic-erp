@@ -1,0 +1,47 @@
+{
+  "name": "erp-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@paypal/react-paypal-js": "^7.8.3",
+    "@prisma/client": "^4.15.0",
+    "bcrypt": "5.1.0",
+    "chart.js": "^4.3.0",
+    "cloudinary": "1.35.0",
+    "easy-modal-hook": "^0.1.1",
+    "graphql": "16.6.0",
+    "graphql-request": "5.2.0",
+    "graphql-scalars": "1.20.1",
+    "graphql-yoga": "3.7.2",
+    "jose": "4.13.1",
+    "just-debounce-it": "^3.2.0",
+    "next": "13.2.3",
+    "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "7.43.7",
+    "recharts": "^2.7.1",
+    "swr": "2.1.0",
+    "uuid": "9.0.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/node": "18.14.6",
+    "@types/react": "18.0.33",
+    "@types/react-dom": "18.0.11",
+    "@types/uuid": "^9.0.1",
+    "@typescript-eslint/eslint-plugin": "5.54.1",
+    "eslint": "8.35.0",
+    "eslint-config-next": "13.2.3",
+    "eslint-config-standard-with-typescript": "34.0.0",
+    "prisma": "^4.15.0",
+    "typescript": "4.9.5"
+  }
+}

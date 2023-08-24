@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: auto;
+}
+
+.container hr {
+  margin: 5px 0;
+  border: none;
+  border-top: 1px solid var(--moonstone);
+  margin-bottom: 20px;
+}
+
+.container form {
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  flex-direction: column;
+  align-self: center;
+}
+
+.container form label {
+  margin: 5px 0 0 0;
+  color: var(--pacific-cyan);
+}
+
+.container form input {
+  margin: 5px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--moonstone);
+}

@@ -1,0 +1,109 @@
+.barContainer {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--moonstone);
+  backdrop-filter: blur(15px);
+  z-index: 9999;
+}
+
+.barContainer::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -1px;
+  width: 1px;
+  height: 20px;
+  background-color: var(--moonstone);
+}
+
+.barContainer ul {
+  position: sticky;
+  top: 86px;
+  list-style: none;
+  margin: 5px;
+}
+
+.barContainer li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* padding: 0 10px 0 0; */
+  margin: 5px;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+}
+
+.barContainer li i {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.barContainer li div {
+  display: none;
+}
+
+.activeLink {
+  background-color: var(--midnight-green-hover);
+  color: var(--pacific-cyan);
+}
+
+/* Efectos */
+
+.barContainer li:hover {
+  background-color: var(--midnight-green-hover);
+  color: var(--pacific-cyan);
+}
+
+.barContainer li i:hover ~ div {
+  position: absolute;
+  display: block;
+  left: 38px;
+  background-color: var(--midnight-dark);
+  padding: 8px;
+  margin: 5px;
+  color: var(--pacific-cyan);
+  border-radius: var(--border-radius);
+}
+
+.barContainer li i:hover ~ div::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(0.37turn);
+  border-radius: 2px;
+  background-color: var(--midnight-dark);
+  /* z-index: -1; */
+}
+
+/* Animaciones */
+
+/* Media Queries */
+
+@media screen and (min-width: 900px) {
+  .barContainer li div {
+    display: block;
+  }
+
+  .barContainer li {
+    padding: 0 10px 0 0;
+  }
+
+  /* Efectos */
+  .barContainer li i:hover ~ div {
+    position: relative;
+    display: flex;
+    left: 0;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .barContainer li i:hover ~ div::before {
+    content: none;
+  }
+}

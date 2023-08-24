@@ -1,0 +1,107 @@
+.landingContainer {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.landingContainer h1 {
+  color: var(--pacific-cyan);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.main hr {
+  margin: 5px 0;
+  border: none;
+  border-top: 1px solid var(--moonstone);
+  margin-bottom: 20px;
+}
+
+.hero {
+  padding: 20px;
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroContainer p {
+  margin: 10px 0;
+  text-align: center;
+  max-width: 1000px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.prices {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.separator {
+  background: var(--midnight-green-hover);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.contact h2 {
+  color: var(--pacific-cyan);
+}
+
+.contact p {
+  max-width: 1000px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.contact a {
+  align-self: center;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+}
+
+.socialIcons a {
+  margin: 0 5px;
+}
+
+/* Efectos */
+
+/* Animaciones */
+
+/* Media Queries */
+
+@media screen and (min-width: 1000px) {
+  .landingContainer {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .prices {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+}

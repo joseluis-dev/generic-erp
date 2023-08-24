@@ -1,0 +1,28 @@
+.detail {
+  display: flex;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.description {
+  width: 90px;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+
+.values label {
+  justify-self: end;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--pacific-cyan);
+  margin-bottom: 20px;
+}

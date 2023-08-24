@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 10px 0;
+}
+
+.container h4 {
+  color: var(--pacific-cyan);
+}
+
+.accountInfo {
+  margin: 0 0 20px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.reportPayment {
+  display: flex;
+  flex-direction: column;
+}
+
+.reportPayment h4,
+.reportPayment p,
+.reportPayment small {
+  margin: 0 0 10px 0;
+}

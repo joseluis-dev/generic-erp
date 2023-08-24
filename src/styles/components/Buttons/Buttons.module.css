@@ -1,0 +1,81 @@
+.primary {
+  font-weight: bold;
+  padding: 5px 10px;
+  margin: 5px;
+  color: white;
+  cursor: pointer;
+  background-color: var(--midnight-green);
+  border: 1px solid transparent;
+  border-radius: var(--border-radius)
+}
+
+.secondary {
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+  color: var(--platinum);
+  text-align: center;
+  border: 1px solid var(--platinum);
+  border-radius: var(--border-radius);
+  background-color: transparent;
+}
+
+.danger {
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+  border: 1px solid var(--danger-red);
+  color: var(--danger-red);
+  border-radius: var(--border-radius);
+  background-color: transparent;
+}
+
+.navPrimary {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  width: 35px;
+  color: var(--clear-midnight-green);
+  cursor: pointer;
+}
+
+.navSecondary {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  width: 35px;
+  color: var(--clear-midnight-green);
+  cursor: pointer;
+  transform: rotate(0.5turn)
+}
+
+/* Efectos */
+
+.primary:hover {
+  color: black;
+  background-color: var(--pacific-cyan);
+}
+
+.secondary:hover {
+  color: black;
+  background-color: var(--moonstone);
+  border: 1px solid transparent;
+}
+
+.danger:hover {
+  color: black;
+  background-color: var(--danger-red-hover);
+  border: 1px solid transparent;
+}
+
+.navPrimary:hover {
+  color: var(--pacific-cyan-hover)
+}
+
+.navSecondary:hover {
+  color: var(--pacific-cyan-hover)
+}
+
+/* Animaciones */
+
+/* Media Queries */

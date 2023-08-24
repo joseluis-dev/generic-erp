@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container hr {
+  margin: 5px 0;
+  border: none;
+  border-top: 1px solid var(--moonstone);
+  margin-bottom: 20px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.noEditingImageLabel img {
+  position: relative;
+  border-radius: 50%;
+  margin: 10px 20px;
+  width: 25vw;
+  height: 25vw;
+  max-width: 200px;
+  max-height: 200px;
+  min-width: 80px;
+  min-height: 80px;
+}
+
+.imageLabel img {
+  position: relative;
+  border-radius: 50%;
+  margin: 10px 20px;
+  width: 25vw;
+  height: 25vw;
+  max-width: 200px;
+  max-height: 200px;
+  min-width: 80px;
+  min-height: 80px;
+}
+
+.imageLabel::before {
+  content: '';
+  position: absolute;
+  background-image: url('/cloud-plus.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--pacific-cyan);
+  margin: 10px 20px;
+  width: 25vw;
+  height: 25vw;
+  max-width: 200px;
+  max-height: 200px;
+  min-width: 80px;
+  min-height: 80px;
+  top: auto;
+  left: auto;
+  opacity: 0.7;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.userInfo form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 250px;
+  margin: 10px;
+}
+
+.userInfo form label {
+  margin: 5px 0 0 0;
+  color: var(--pacific-cyan);
+}
+
+.userInfo form input {
+  margin: 5px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--moonstone);
+}
+
+.fileInput {
+  display: none;
+}

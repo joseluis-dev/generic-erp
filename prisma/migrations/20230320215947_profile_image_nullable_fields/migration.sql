@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE `organization` MODIFY `creation_date` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3);
+
+-- AlterTable
+ALTER TABLE `user` MODIFY `creation_date` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3);

@@ -1,0 +1,15 @@
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.main iframe {
+  border-radius: var(--border-radius);
+}

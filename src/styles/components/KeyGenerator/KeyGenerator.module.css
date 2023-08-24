@@ -1,0 +1,26 @@
+.keyContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+.keyContainer form {
+  margin-bottom: 10px;
+}
+
+.keyContainer textarea {
+  resize: none;
+  background-color: var(--midnight-green-hover);
+  border-radius: var(--border-radius)
+}
+
+.keyContainer select {
+  background-color: transparent;
+  padding: 5px;
+  border-radius: var(--border-radius);
+  outline: none;
+}
+
+.keyContainer select option {
+  background-color: var(--midnight-dark);
+}

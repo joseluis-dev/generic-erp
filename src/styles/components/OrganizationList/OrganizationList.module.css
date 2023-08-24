@@ -1,0 +1,82 @@
+.container {
+  position: sticky;
+  top: 81px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  backdrop-filter: blur(15px);
+}
+
+.container hr {
+  margin: 5px 0;
+  border: none;
+  border-top: 1px solid var(--moonstone);
+  margin-bottom: 20px;
+}
+
+.organizationList {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 100%;
+  max-width: 250px;
+}
+
+.container form {
+  margin: 5px 0 0 0;
+  padding: 5px 0 0 0;
+  border-top: 1px solid var(--moonstone);
+  display: flex;
+  flex-direction: column;
+}
+
+.container form input {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid var(--moonstone);
+  border-radius: var(--border-radius);
+  background-color: transparent;
+}
+
+.ul {
+  list-style: none;
+  color: white;
+}
+
+.ul li {
+  display: flex;
+  margin: 5px 0;
+  align-items: center;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+}
+
+.ul img {
+  margin: 10px;
+  border-radius: 50%;
+  /* width: auto;
+  height: auto; */
+}
+
+.ul h3 {
+  color: var(--pacific-cyan);
+}
+
+/* Efectos */
+
+.ul li:hover {
+  background-color: var(--midnight-green-hover);
+}
+
+.ul li:hover h3 {
+  color: var(--moonstone);
+}
+
+.container form input:focus {
+  outline: 2px solid var(--midnight-green);
+}
+
+/* Animaciones */
+
+/* Media Queries */

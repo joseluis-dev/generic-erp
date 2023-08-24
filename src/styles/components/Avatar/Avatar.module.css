@@ -1,0 +1,37 @@
+.avatarContainer {
+  display: flex;
+}
+
+.avatarContainer a {
+  display: flex;
+  align-items: center;
+  color: var(--pacific-cyan);
+}
+
+.avatarContainer a small {
+  display: none;
+  padding: 0 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.avatarContainer img {
+  margin: 5px;
+  border-radius: 50%;
+}
+
+/* Efects */
+
+.avatarContainer a:hover small {
+  color: var(--pacific-cyan-hover)
+}
+
+/* Animations */
+
+/* Media Queries */
+
+@media screen and (min-width: 900px) {
+  .avatarContainer a small {
+    display: inline-block
+  }
+}

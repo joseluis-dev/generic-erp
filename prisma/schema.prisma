@@ -1,0 +1,262 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  // url = env("LOCAL_DB_URL")
+  url = env("PROD_DB_URL")
+  relationMode = "prisma"
+}
+
+
+model user {
+  id String @id @default(uuid()) @unique
+  fullName String
+  idNumber String? @unique
+  email String @unique
+  userName String @unique
+  password String
+  creation_date DateTime @default(now())
+  update_date DateTime?
+  update_by String?
+  organization organizationtouser[]
+  image profile_image?
+  payment payment[]
+}
+
+model organization {
+  id String @id @default(uuid()) @unique
+  name String
+  brand_name String
+  identifier String @unique
+  telephone String
+  email String @unique
+  address String?
+  creation_date DateTime @default(now())
+  update_date DateTime?
+  update_by String?
+  image profile_image?
+  user organizationtouser[]
+  client client[]
+  product product[]
+  sale sale[]
+  provider provider[]
+  inventory inventory[]
+  purchase purchase[]
+}
+
+model organizationtouser {
+  user user @relation(fields: [userID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userID String
+  organization organization @relation(fields: [orgID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  orgID String
+  rol rol @default(NORMAL)
+  @@id(fields: [userID, orgID])
+  @@index([userID])
+  @@index([orgID])
+}
+
+model keys {
+  id Int @id @default(autoincrement()) @unique
+  key String @unique
+  creation_date DateTime
+  orgID String?
+}
+
+enum rol {
+  NORMAL
+  ADMIN
+  MASTER
+}
+
+model generalclient {
+  id String @id @default(uuid()) @unique
+  fullName String
+  idNumber String? @unique
+  email String? @unique
+  address String?
+  telephone String
+}
+
+model client {
+  id String @id @default(uuid()) @unique
+  fullName String
+  idNumber String @unique
+  email String? @unique
+  address String?
+  telephone String
+  creation_date DateTime @default(now())
+  update_date DateTime?
+  update_by String?
+  organization organization @relation(fields: [orgID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  orgID String
+  status status @relation(fields: [statusID], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  statusID Int
+  product product[]
+  sale sale[]
+
+  @@index([orgID])
+  @@index([statusID])
+}
+
+model status {
+  id Int @id @default(autoincrement()) @unique
+  code String @unique
+  description String
+  client client[]
+  product product[]
+  sale sale[]
+  provider provider[]
+  purchase purchase[]
+}
+
+model profile_image {
+  id String @id @default(uuid())
+  url String
+  public_id String @unique
+  creation_date DateTime
+  update_date DateTime?
+  update_by String?
+  organization organization? @relation(fields: [orgID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  orgID String? @unique
+  user user? @relation(fields: [userID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userID String? @unique
+}
+
+model product {
+  id String @id @default(uuid())
+  code String @unique
+  name String
+  cost Float
+  description String?
+  creation_date DateTime
+  update_date DateTime?
+  update_by String?
+  status status @relation(fields: [statusID], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  statusID Int
+  client client[]
+  sale producttosale[]
+  organization organization @relation(fields: [orgID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  orgID String
+  inventory inventory?
+  purchase producttopurchase[]
+
+  @@index([statusID])
+  @@index([orgID])
+}
+
+model producttosale {
+  id String @id @default(uuid())
+  product product @relation(fields: [productID], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  productID String
+  sale sale @relation(fields: [saleID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  saleID String
+  cuantity Int
+  cost Float
+
+  @@index([productID])
+  @@index([saleID])
+}
+
+model sale {
+  id String @id @default(uuid())
+  description String?
+  total_cost Float
+  sale_date DateTime
+  client client @relation(fields: [clientID], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  clientID String
+  product producttosale[]
+  organization organization @relation(fields: [orgID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  orgID String
+  status status @relation(fields: [statusID], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  statusID Int
+
+  @@index([clientID])
+  @@index([orgID])
+  @@index([statusID])
+}
+
+model payment {
+  id String @id @default(uuid())
+  method String
+  amount Float
+  period String
+  description String
+  creation_date DateTime
+  expiration_date DateTime
+  user user @relation(fields: [userID], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  userID String
+
+  @@index([userID])
+}
+
+model provider {
+  id String @id @default(uuid())
+  name String
+  ruc String @unique
+  bank_account String?
+  email String @unique
+  telephone String
+  description String?
+  creation_date DateTime
+  update_date DateTime?
+  update_by String?
+  status status @relation(fields: [statusID], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  statusID Int
+  organization organization @relation(fields: [orgID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  orgID String
+  purchase purchase[]
+
+  @@index([statusID])
+  @@index([orgID])
+}
+
+model inventory {
+  id String @id @default(uuid())
+  cuantity Float
+  location String?
+  organization organization @relation(fields: [orgID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  orgID String
+  product product @relation(fields: [productID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  productID String @unique
+
+  @@index([orgID])
+  @@index([productID])
+}
+
+model purchase {
+  id String @id @default(uuid())
+  total_cost Float
+  description String?
+  creation_date DateTime
+  update_date DateTime?
+  update_by String?
+  status status @relation(fields: [statusID], references: [id])
+  statusID Int
+  provider provider @relation(fields: [providerID], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  providerID String
+  detail producttopurchase[]
+  organization organization @relation(fields: [orgID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  orgID String
+
+  @@index([providerID])
+  @@index([orgID])
+  @@index([statusID])
+}
+
+model producttopurchase {
+  id String @id @default(uuid())
+  product product @relation(fields: [productID], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  productID String
+  purchase purchase @relation(fields: [purchaseID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  purchaseID String
+  cuantity Int
+  cost Float
+
+  @@index([productID])
+  @@index([purchaseID])
+}

@@ -1,0 +1,11 @@
+.container {
+  display: grid;
+  grid-column: 1 / 5;
+}
+
+/* Media Query */
+@media screen and (min-width: 900px) {
+  .container {
+    grid-column: 1 / 3;
+  }
+}

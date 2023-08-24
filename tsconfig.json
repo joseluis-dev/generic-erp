@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "#config/*": ["./src/server/config/*"],
+      "#lib/*": ["./src/server/lib/*"],
+      "#middlewares/*": ["./src/server/middlewares/*"],
+      "#graphQL/*": ["./src/server/graphQL/*"],
+      "#models/*": ["./src/server/models/*"],
+      "#constants/*": ["./src/server/constants/*"],
+      "#pages/*": ["./src/pages/*"],
+      "#components/*": ["./src/client/components/*"],
+      "#services/*": ["./src/client/services/*"],
+      "#hooks/*": ["./src/client/hooks/*"],
+      "#assets/*": ["./src/client/assets/*"],
+      "#graphQLClient/*": ["./src/client/graphql/*"],
+      "#styles/*": ["./src/styles/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

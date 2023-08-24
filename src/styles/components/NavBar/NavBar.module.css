@@ -1,0 +1,71 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(15px);
+  z-index: 10000;
+}
+
+.nav {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid var(--moonstone);
+}
+
+.nav input {
+  padding: 5px;
+  height: 40px;
+  width: 220px;
+  align-self: center;
+  border: 1px solid var(--moonstone);
+  border-radius: var(--border-radius);
+  background-color: transparent;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer img {
+  opacity: 0.8;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+.logoContainer h1 {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--pacific-cyan);
+  margin: 5px;
+}
+
+.navUserContainer {
+  display: flex;
+  align-items: center;
+}
+
+/* Efectos */
+
+.nav input:focus {
+  outline: 2px solid var(--midnight-green);
+}
+
+/* Animaciones */
+
+/* Media Queries */
+
+@media screen and (min-width: 900px) {
+  .logoContainer h1 {
+    display: block
+  }
+
+  .nav {
+    width: 80%;
+  }
+}

@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  color: var(--pacific-cyan);
+  align-content: center;
+  backdrop-filter: blur(15px);
+  margin: 5px 0;
+}
+
+.container hr {
+  margin: 5px 0;
+  border: none;
+  border-top: 1px solid var(--moonstone);
+  margin-bottom: 20px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.container ul {
+  list-style: none;
+  color: white;
+}
+
+.container ul li {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px 0;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--border-radius);
+}
+
+.container ul img {
+  margin: 10px;
+  border-radius: 50%;
+  /* width: auto;
+  height: auto; */
+}
+
+.container form {
+  display: flex;
+  margin: 10px;
+  align-items: center;
+}
+
+.container form select {
+  padding: 5px;
+  background-color: transparent;
+  border-radius: var(--border-radius);
+  outline: none;
+}
+
+.container form select option {
+  background-color: var(--midnight-dark);
+}
+
+/* Efectos */
+
+.container ul li:hover {
+  background-color: var(--midnight-green-hover);
+}
+
+.container ul li:hover h3 {
+  color: var(--moonstone);
+}
+
+/* Animaciones */
+
+/* Media Queries */
